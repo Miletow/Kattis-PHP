@@ -12,15 +12,15 @@ function ToiletSeatSt1($word, $LeaveSetting){
     $Prefer = str_split($word);
     $Switches = 0;
     $Seat = $Prefer[0];
-    $MustLeave = $LeaveSetting;
+    
     
     for($i = 1; $i <count($Prefer); $i++){
         if(!Compare($Prefer[$i], $Seat)){
             $Seat = $Seat == 'U' ? 'D' : 'U';
             $Switches++;
         }
-        if(!Compare($MustLeave, $Seat)){
-            $Seat = $MustLeave;
+        if(!Compare($LeaveSetting, $Seat)){
+            $Seat = $LeaveSetting;
             $Switches++;
         }
     }
